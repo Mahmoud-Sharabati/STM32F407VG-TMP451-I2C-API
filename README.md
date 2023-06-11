@@ -32,8 +32,9 @@ git clone [here](https://github.com/Mahmoud-Sharabati/STM32F407VG-TMP451-I2C-API
 
 #### Notes:																	
 1. You must modify the I2C parameters as shown in image below.  
-	1. ![I2C Configuration](https://github.com/Mahmoud-Sharabati/STM32F407VG-TMP451-I2C-API/assets/16566502/8fd0a614-1fd2-4f49-b87f-adb840a621f8)
-	2. Other parameters will be automatically modified when generates the code.
+	![I2C Configuration](https://github.com/Mahmoud-Sharabati/STM32F407VG-TMP451-I2C-API/assets/16566502/8fd0a614-1fd2-4f49-b87f-adb840a621f8)
+	 
+	 Other parameters will be automatically modified when generates the code.
 
 2. This Board has an optional GPIO Buzzer with the following pin:
    | BUZZER  |
