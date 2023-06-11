@@ -1,0 +1,4 @@
+../Core/Src/TMP451.c:19:6:TMP451_init	16	static
+../Core/Src/TMP451.c:28:6:TMP451_generic_write	32	static
+../Core/Src/TMP451.c:38:9:TMP451_generic_read	32	static
+../Core/Src/TMP451.c:57:7:TMP451_read_temp	32	static
