@@ -24,7 +24,7 @@ git clone [here](https://github.com/Mahmoud-Sharabati/STM32F407VG-TMP451-I2C-API
 ## Usage
 
 ### Before using TMP451 I2C Driver
-1. Modify the Hardware Configuration and Pins using CubeMX software
+1. Modify the Hardware Configuration and Pins using CubeMX software.
     This driver use I2C1 with the following pins:
     | I2C1_SCL     | I2C1_SDA   |
     | -------------|:----------:|
@@ -32,7 +32,7 @@ git clone [here](https://github.com/Mahmoud-Sharabati/STM32F407VG-TMP451-I2C-API
 
 #### Notes:																	
 1. You must modify the I2C parameters as shown in image below.  
-	1. ![I2C_Config][image](https://github.com/Mahmoud-Sharabati/STM32F407VG-TMP451-I2C-API/assets/16566502/e24d9676-ac2c-4d30-87a3-01d070e51352)
+	1. (![I2C_Config][image](https://github.com/Mahmoud-Sharabati/STM32F407VG-TMP451-I2C-API/assets/16566502/e24d9676-ac2c-4d30-87a3-01d070e51352))
 	2. Other parameters will be automatically modified when generates the code.
 
 2. This Board has an optional GPIO Buzzer with the following pin:
