@@ -28,31 +28,38 @@ git clone [here](https://github.com/Mahmoud-Sharabati/STM32F407VG-TMP451-I2C-API
     This driver use I2C1 with the following pins:
     | I2C1_SCL     | I2C1_SDA   |
     | -------------|:----------:|
-    | PB8	         | PB9        |
+    | PB8	   | PB9        |
 
-	#### Notes:																	
-	1. You need to modify the name of "Chip-Select pin CS" on your project to be `PCA21125_SPI_CS`.
-	2. You must modify the SPI parameters as shown in image below.  
-	![SPI_RTC_Config](https://user-images.githubusercontent.com/16566502/217271789-834afec2-b3bb-41af-882d-fa5258ebfe6b.png)  
-	3. Other parameters will be automatically modified when generates the code.
+#### Notes:																	
+1. You must modify the I2C parameters as shown in image below.  
+	1. ![I2C_Config][image](https://github.com/Mahmoud-Sharabati/STM32F407VG-TMP451-I2C-API/assets/16566502/e24d9676-ac2c-4d30-87a3-01d070e51352)
+	2. Other parameters will be automatically modified when generates the code.
 
-2. This Board has an optional LED and Buzzer with the following pins:
-   | LED	| Buzzer  |
-   |------------|---------|
-   | PB0	| PE2	  |
+2. This Board has an optional GPIO Buzzer with the following pin:
+   | BUZZER  |
+   |---------|
+   | PA3     |
 
- ### Use PCA21125 Driver instruction
-1. Define your RTC_Data `_RTC_R_DATA` and `RTC_Data _RTC_W_DATA` variables to be used to Set and Store the readings.
+ ### Use TMP451 Driver instruction
+1. Define your `read_data` variable to be used to Set and Store the readings.
 
-2. Initialize the PCA21125RTC driver using: `_PCA21125RTC_Init(SPI_HandleTypeDef *hspi, ITStatus INT_Status)`
+2. Initialize the TMP451 driver using: `TMP451_init (I2C_HandleTypeDef* hi2c)`
 
 	Parameters:
-   | hspi | INT_Status |
-   |------------|--------- |
-   | Connected SPI_HandleTypeDef | Status of the RTC INT pin |
+   | hi2c |
+   |------|
+   | Connected I2C_HandleTypeDef |
    
-3. Fill the Current time enum as an initial values. The diver project uses the *_RTC_W_DATA* variable for the initial values.  
-4. Set the initial RTC value by using `RTC_SetTime(RTC_Data* _rtc_data)`
-5. Get the RTC readings by `PCA21125RTC_GetTime(RTC_Data* _rtc_data)` function. The diver project uses the `_RTC_R_DATA` variable to store reading values into. 
+3. Get the temperature readings by `TMP451_read_temp ( uint8_t temp_macro )` function. The diver project uses the `read_data` variable to store reading values into.
+		temp_macro can be:
+   | TMP451_TEMPERATURE_LOCAL | TMP451_TEMPERATURE_REMOTE |
+   |------|:----------:|
+   | Local temperature | Remote temperature |
+   
+**NOTE: The TMP451 readings in this project can be monitored using the STM32 debugger.**
 
-**NOTE: The PCA21125RTC readings in this project can be monitored using the STM32 debugger.**
+## Credits
+This project was built using the [mikrosdk_click_v2](https://github.com/MikroElektronika/mikrosdk_click_v2/tree/master/clicks/thermo17) library developed by [MikroElektronika](https://www.mikroe.com/). The mikrosdk_click_v2 library provides a comprehensive set of drivers and examples for various click boards, including the Thermo 17 click.
+
+## License
+This driver is licensed under the MIT License. See the LICENSE file for details.
